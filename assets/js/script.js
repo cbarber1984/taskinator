@@ -77,7 +77,7 @@ listItemEl.appendChild(taskInfoEl);
 var taskActionsEl = createTaskActions(taskIdCounter);
 listItemEl.appendChild(taskActionsEl);
 
-// append based upon existing status if present
+// append to list based upon existing status selection if present
     
     if (taskDataObj.status === "to do") {
         listItemEl.querySelector("select").selectedIndex = 0;
