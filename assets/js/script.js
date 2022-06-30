@@ -78,18 +78,19 @@ var taskActionsEl = createTaskActions(taskIdCounter);
 listItemEl.appendChild(taskActionsEl);
 
 // append based upon existing status if present
-console.log(taskDataObj);
-console.log(taskDataObj.status);
     
     if (taskDataObj.status === "to do") {
+        listItemEl.querySelector("select").selectedIndex = 0;
         tasksToDoEl.appendChild(listItemEl);
     }
     else if (taskDataObj.status === "in progress") {
+        listItemEl.querySelector("select").selectedIndex = 1;
         tasksInProgressEl.appendChild(listItemEl);
     }
     else if (taskDataObj.status === "completed") {
+        listItemEl.querySelector("select").selectedIndex = 2;
         tasksCompletedEL.appendChild(listItemEl);
-    }
+    } 
 
 taskDataObj.id = taskIdCounter;
 tasks.push(taskDataObj);
@@ -137,7 +138,7 @@ var createTaskActions = function(taskId) {
         // append to select
         statusSelectEl.appendChild(statusOptionEl);
     }
-
+    
     return actionContainerEl;
 };
 
